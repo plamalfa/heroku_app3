@@ -64,7 +64,7 @@ const _accessData = {
 //   });
 // });
 
-app.post("/search", function(req, res) {
+app.get("/search", function(req, res) {
   let db = new Discogs(_accessData).database();
   db.search(req.query, (err, data) => {
     var searchResults = data.results;
