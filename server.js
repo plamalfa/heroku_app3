@@ -31,10 +31,7 @@ app.get("/authorize", function(req, res) {
   );
 });
 
-app.get("https://sheltered-beyond-73183.herokuapp.com/callback", function(
-  req,
-  res
-) {
+app.get("/callback", function(req, res) {
   var oAuth = new Discogs(_requestData).oauth();
   oAuth.getAccessToken(
     req.query.oauth_verifier, // Verification code sent back by Discogs
@@ -46,10 +43,7 @@ app.get("https://sheltered-beyond-73183.herokuapp.com/callback", function(
   );
 });
 
-app.get("https://sheltered-beyond-73183.herokuapp.com/callback", function(
-  req,
-  res
-) {
+app.get("/identity", function(req, res) {
   var dis = new Discogs(_accessData);
   dis.getIdentity(function(err, data) {
     res.send(data);
