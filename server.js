@@ -64,6 +64,10 @@ const _accessData = {
 //   });
 // });
 
+app.get("/home", function(req, res) {
+  res.send("Young is c00l");
+});
+
 app.get("/search", function(req, res) {
   let db = new Discogs(_accessData).database();
   db.search(req.query, (err, data) => {
