@@ -21,7 +21,7 @@ app.get("/authorize", function(req, res) {
   oAuth.getRequestToken(
     "ScTvSOsxTpJNiempUWhF",
     "kvDwtbQJysQWRjUOFQGvYUsXrDdELbYx",
-    "/callback",
+    "https://sheltered-beyond-73183.herokuapp.com//callback",
     function(err, requestData) {
       _requestData = requestData;
       // Persist "requestData" here so that the callback handler can
@@ -41,7 +41,7 @@ app.get("https://sheltered-beyond-73183.herokuapp.com/callback", function(
     function(err, accessData) {
       _accessData = accessData;
       // Persist "accessData" here for following OAuth calls
-      res.redirect("/identity");
+      res.redirect("https://sheltered-beyond-73183.herokuapp.com//identity");
     }
   );
 });
