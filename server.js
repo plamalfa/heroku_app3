@@ -70,7 +70,7 @@ app.get("/home", function(req, res) {
 
 app.get("/search", function(req, res) {
   let db = new Discogs(_accessData).database();
-  db.search(req.query, (err, data) => {
+  db.search("radiohead ok computer", (err, data) => {
     var searchResults = data.results;
     var firstFiveResults = searchResults.slice(0, 5);
     console.log(firstFiveResults);
